@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    
+<a href="www.global.com" id="viewLink"> View Link </a>
+<button id="change">Change link</button>
+
+
+
+    <h2 class="red" id="heading">To Do List</h2> 
+    <button id="colorize" rang="klsjdf"> Colorize</button>
+
+    <label for="task">Enter the next task:</label>
+    <input type="text"  id="task"  required>
+
+    <button id="add">Add Task</button>
+    <button id="reset">Reset List</button>
+
+
+<br><br>
+<h4>This is my TO-DO List:</h4>
+<ul id="myList">
+
+</ul>
+
+
+
+
+
+
+    <script src="jQuery.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+            function removeTask(id){
+            $('#'+id).remove();
+             }
+    </script>
+</body>
+</html>
+
