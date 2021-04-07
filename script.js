@@ -20,12 +20,10 @@ $(function(){
 
 
 
-var count=0;
-
+var dynamicId = 0;
 
 
     $('#add').on('click',function(){
-        
         if($('#task').val() == ""){
             $('#task').css({
                 'border-color':'red',
@@ -33,9 +31,10 @@ var count=0;
                 'color':'white'
             });
         }else{
-            count++;
+            dynamicId = dynamicId +1;
+
             var donga = $('#task').val();
-            $('#myList').append("<li id="+count+" onclick='removeTask("+count+")' >"+donga+"</li>");
+            $('#myList').append("<li id='"+dynamicId+"' >"+donga+"<button onclick='removeFun("+dynamicId+")'>Del</button></li>");
             
             $('#task').val("");
         }
@@ -53,9 +52,9 @@ var count=0;
         if($('#task').val() == ""){
             alert('please enter some task')
         }else{
-            count++;
+            dynamicId = dynamicId +1;
             var donga = $('#task').val();
-            $('#myList').append("<li id="+count+" onclick='removeTask("+count+")' >"+donga+"</li>");
+            $('#myList').append("<li id='"+dynamicId+"' >"+donga+"<button onclick='removeFun("+dynamicId+")'>Del</button></li>");
             
             $('#task').val("");
         }
@@ -99,6 +98,10 @@ var count=0;
 
 
 
-
-
 }); //Ends jQuery
+
+
+   var removeFun = function(id){
+    $('#'+id).fadeOut('slow');
+
+   }
